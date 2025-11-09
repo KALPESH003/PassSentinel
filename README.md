@@ -63,6 +63,6 @@ PassSentinel/
 ### 1️⃣ Clone this repository
 ```bash
 git clone https://github.com/KALPESH003/PassSentinel.git
-###2️⃣Open the project
-###3️⃣ Run the project
+2️⃣Open the project
+3️⃣ Run the project
 Just open index.html directly in your browser — no setup or dependencies required.
