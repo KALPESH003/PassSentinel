@@ -1,5 +1,5 @@
 # PassSentinel
-PassSentinel is an advanced browser-based cybersecurity tool built with pure HTML, CSS, and JavaScript. It analyzes password strength, calculates entropy, provides actionable feedback, generates secure passwords, and securely hashes input using the Web Crypto API — all locally in your browser.
+PassSentinel is an advanced browser-based cybersecurity tool built with pure HTML, CSS, and JavaScript. It analyses password strength, calculates entropy, provides actionable feedback, generates secure passwords, and securely hashes input using the Web Crypto API — all locally in your browser.
 
 ---
 
@@ -63,6 +63,7 @@ PassSentinel/
 ### 1️⃣ Clone this repository
 ```bash
 git clone https://github.com/KALPESH003/PassSentinel.git
-2️⃣Open the project
-3️⃣ Run the project
+```
+### 2️⃣Open the project
+### 3️⃣ Run the project
 Just open index.html directly in your browser — no setup or dependencies required.
