@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pass Sentinel — Password Strength Analyzer & Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <h1>PassSentinel</h1>
+        <p class="tagline">Analyze entropy, get actionable feedback, generate secure passwords — all in your browser.</p>
+      </div>
+      <div class="brand">
+        <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <section class="card analyzer" aria-labelledby="analyzerTitle">
+      <div class="card-head">
+        <h2 id="analyzerTitle">Password Analyzer</h2>
+        <div class="controls-inline">
+          <button id="pasteBtn" title="Paste from clipboard">📋 Paste</button>
+          <button id="clearBtn" title="Clear">✖</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="passwordInput" class="sr-only">Password</label>
+        <div class="input-row">
+          <input id="passwordInput" type="password" placeholder="Type or paste a password to analyze" autocomplete="off" />
+          <button id="toggleVisible" title="Show / hide password" aria-pressed="false">👁️</button>
+        </div>
+      </div>
+
+      <div class="meter-wrap" aria-hidden="false">
+        <div id="strengthLabel" class="strength-label">Strength: —</div>
+        <div id="meter" class="meter" aria-hidden="true">
+          <div id="meterFill" class="meter-fill"></div>
+        </div>
+        <div id="entropy" class="meta">Entropy: — bits</div>
+      </div>
+
+      <div class="feedback">
+        <h3>Suggestions</h3>
+        <ul id="suggestions" class="suggestions"></ul>
+      </div>
+
+      <div class="meta-row">
+        <div>
+          <label for="hashAlgo" class="small">Hash preview</label>
+          <select id="hashAlgo">
+            <option value="sha-256" selected>SHA-256</option>
+          </select>
+          <button id="hashBtn" class="outline">Compute</button>
+        </div>
+        <div class="hash-output" id="hashOutput" aria-live="polite"></div>
+      </div>
+
+      <div class="actions-row">
+        <button id="copyBtn" class="primary">Copy password</button>
+        <button id="saveBtn" class="ghost">Save to history</button>
+        <button id="checkBreached" class="warn">Quick breach check</button>
+      </div>
+    </section>
+
+    <section class="card generator" aria-labelledby="generatorTitle">
+      <h2 id="generatorTitle">Password Generator</h2>
+
+      <div class="form-grid">
+        <label>
+          Length
+          <input id="genLength" type="range" min="8" max="64" value="16" />
+          <div class="rangeValue" id="genLengthValue">16</div>
+        </label>
+
+        <label><input id="inclLower" type="checkbox" checked /> lowercase</label>
+        <label><input id="inclUpper" type="checkbox" checked /> UPPERCASE</label>
+        <label><input id="inclNumbers" type="checkbox" checked /> numbers</label>
+        <label><input id="inclSymbols" type="checkbox" checked /> symbols</label>
+      </div>
+
+      <div class="gen-row">
+        <input id="generated" readonly aria-label="Generated password" />
+        <div class="gen-actions">
+          <button id="generateBtn" class="primary">Generate</button>
+          <button id="copyGenBtn" class="outline">Copy</button>
+        </div>
+      </div>
+
+      <p class="hint">Tip: Use the generator for creating strong unique passwords per site.</p>
+    </section>
+
+    <section class="card history" aria-labelledby="historyTitle">
+      <div class="card-head">
+        <h2 id="historyTitle">History & Export</h2>
+        <div class="controls-inline">
+          <button id="exportBtn" title="Export CSV">⤓ Export</button>
+          <button id="clearHistory" title="Clear history">🗑️ Clear</button>
+        </div>
+      </div>
+
+      <ul id="historyList" class="history-list" aria-live="polite"></ul>
+      <small class="muted">Stored locally in your browser only (localStorage).</small>
+    </section>
+
+    <footer class="footer">
+      <div>Built with Web Crypto & vanilla JS • No server, no passwords are transmitted.</div>
+      <div>Made by Kalpesh K. Suthar with ❤️.</div>
+      <div class="credits">© Pass Sentinel</div>
+    </footer>
+  </main>
+
+  <template id="historyItem">
+    <li class="history-item">
+      <div class="h-left">
+        <div class="h-pass"></div>
+        <div class="h-meta">
+          <div class="h-time"></div>
+          <div class="h-entropy"></div>
+        </div>
+      </div>
+      <div class="h-actions">
+        <button class="h-copy" title="Copy">Copy</button>
+        <button class="h-delete" title="Delete">Delete</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

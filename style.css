@@ -1,0 +1,108 @@
+/* Password Sentinel styles — modern dark UI, responsive, accessible */
+:root{
+  --bg: #0d1117;
+  --card: #0f1720;
+  --muted: #98a0ab;
+  --accent1: #7c4dff;
+  --accent2: #00f5d4;
+  --danger: #ff6b6b;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", monospace;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: radial-gradient(800px 400px at 10% 0%, rgba(124,77,255,0.06), transparent),
+              radial-gradient(800px 400px at 90% 100%, rgba(0,245,212,0.04), transparent),
+              var(--bg);
+  color:#e6eef6;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  padding:28px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+/* App layout */
+.app{width:100%;max-width:1100px;display:grid;grid-template-columns:1fr 420px 360px;gap:20px;align-items:start}
+.header{grid-column:1 / -1;display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.header h1{font-size:1.35rem;margin:0}
+.tagline{color:var(--muted);font-size:0.95rem}
+.brand button{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:var(--muted);cursor:pointer}
+
+/* card */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border-radius:var(--radius);padding:16px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(3,6,10,0.6)}
+.card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.controls-inline{display:flex;gap:8px}
+.controls-inline button{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;color:var(--muted);cursor:pointer}
+
+/* Inputs */
+.field{margin-bottom:12px}
+.input-row{display:flex;gap:8px}
+.input-row input{flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:var(--card);color:inherit;outline:none}
+.input-row button{padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;cursor:pointer}
+
+/* Meter */
+.meter-wrap{margin:10px 0}
+.strength-label{font-weight:600;margin-bottom:6px}
+.meter{height:12px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
+.meter-fill{width:0%;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));transition:width 360ms cubic-bezier(.2,.9,.3,1);box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+
+/* feedback */
+.feedback h3{margin:8px 0 6px 0;color:var(--muted);font-size:0.95rem}
+.suggestions{list-style:none;padding-left:16px;margin:0;color:var(--muted)}
+.suggestions li{margin:6px 0;display:flex;gap:8px}
+.suggestions li.good{color:var(--accent2)}
+.suggestions li.bad{color:var(--danger)}
+
+/* meta row */
+.meta-row{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:10px}
+.hash-output{font-family:var(--mono);font-size:0.78rem;color:var(--muted);min-width:180px;word-break:break-all}
+
+/* actions */
+.actions-row{display:flex;gap:8px;margin-top:12px}
+button.primary{background:linear-gradient(135deg,var(--accent1),var(--accent2));border:none;color:#fff;padding:10px 14px;border-radius:10px;cursor:pointer;box-shadow:0 8px 24px rgba(124,77,255,0.14)}
+button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);padding:10px;border-radius:10px}
+button.warn{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--danger);padding:10px;border-radius:10px}
+button.outline{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:8px;color:var(--muted);cursor:pointer}
+
+/* Generator */
+.generator .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;align-items:center}
+.generator label{display:flex;flex-direction:column;gap:6px;color:var(--muted)}
+.rangeValue{font-weight:700;color:var(--muted);text-align:right}
+.gen-row{display:flex;gap:8px;align-items:center}
+.gen-row input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:var(--card);color:inherit}
+.gen-actions{display:flex;flex-direction:column;gap:8px}
+.hint{color:var(--muted);font-size:0.9rem;margin-top:10px}
+
+/* History */
+.history-list{list-style:none;padding:0;margin:8px 0 0 0;display:flex;flex-direction:column;gap:8px}
+.history-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)}
+.h-left{display:flex;gap:12px;align-items:center}
+.h-pass{width:56px;height:36px;border-radius:6px;background:linear-gradient(180deg,#111,#0b0b0d);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.85rem;color:var(--muted);padding:6px;overflow:hidden}
+.h-meta{display:flex;flex-direction:column}
+.h-time{font-size:0.85rem;color:var(--muted)}
+.h-entropy{font-size:0.78rem;color:var(--muted)}
+.h-actions button{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;color:var(--muted);cursor:pointer}
+
+/* footer */
+.footer{grid-column:1 / -1;margin-top:10px;display:flex;justify-content:space-between;color:var(--muted);font-size:0.9rem}
+
+/* small utilities */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.muted{color:var(--muted)}
+
+/* responsive */
+@media (max-width:1100px){
+  .app{grid-template-columns:1fr 420px}
+  .history{grid-column:1 / -1}
+}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr;gap:12px}
+  .card{padding:12px}
+  .generator .form-grid{grid-template-columns:1fr}
+}
