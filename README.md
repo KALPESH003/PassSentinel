@@ -3,39 +3,39 @@ PassSentinel is an advanced browser-based cybersecurity tool built with pure HTM
 
 ---
 
-## 🧠 Features
+## Features
 
-- ✅ **Password Strength Analysis**
+- **Password Strength Analysis**
   - Real-time entropy and heuristic scoring  
   - Animated strength meter and colour feedback  
   - Actionable suggestions for improvement  
 
-- 🧮 **Entropy Calculation**
+- **Entropy Calculation**
   - Estimates password entropy (bits of randomness)
   - Uses mathematical modelling for real security metrics  
 
-- 🔑 **Password Generator**
+- **Password Generator**
   - Customizable length (8–64)
   - Toggle lowercase, uppercase, numbers, and symbols  
   - Copy to clipboard instantly  
 
-- 🧰 **Security Tools**
+- **Security Tools**
   - SHA-256 hash preview using Web Crypto API  
   - Quick local breach check (demo list)  
   - Copy, paste, and clear controls  
 
-- 🧱 **Local History & Export**
+- **Local History & Export**
   - Save analysed passwords with entropy and scores  
   - Stored securely in `localStorage` (browser only)  
   - Export to CSV or clear history anytime  
 
-- 🌙 **Theme Toggle**
+- **Theme Toggle**
   - Elegant light/dark mode  
   - Modern, glassy dark UI built with CSS gradients and animations  
 
 ---
 
-## 🖥️ Tech Stack
+## Tech Stack
 
 | Technology | Purpose |
 |-------------|----------|
@@ -47,23 +47,23 @@ PassSentinel is an advanced browser-based cybersecurity tool built with pure HTM
 
 ---
 
-## 🧩 Folder Structure
+## Folder Structure
 ```bash
 PassSentinel/
-├── index.html # Main HTML file
-├── style.css # All visual styling
-├── app.js # Application logic
+├── index.html # Main file
+├── style.css 
+├── app.js # Logic file
 └── README.md # Project documentation
 ```
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### 1️⃣ Clone this repository
+### 01. Clone this repository
 ```bash
 git clone https://github.com/KALPESH003/PassSentinel.git
 ```
-### 2️⃣Open the project
-### 3️⃣ Run the project
+### 02. Open the project
+### 03. Run the project
 Just open index.html directly in your browser — no setup or dependencies required.
