@@ -72,9 +72,9 @@ Just open index.html directly in your browser — no setup or dependencies requi
 ## 👤 Author
 KALPESH K. SUTHAR
 
-If you like Taskly, give it a star ⭐ on GitHub and showcase your support!
+If you like *PassSentinel*, give it a star ⭐ on GitHub and showcase your support!
 
 ---
 
 ## Tags
-task-manager, productivity, html-css-js, webapp, ui-design, localstorage, javascript-project, to-do-list, mscit, portfolio
+password-analyzer, security, cybersecurity, hashing, html-css-js, web-crypto-api, frontend-security, data-privacy, password-generator, mscit, portfolio
