@@ -48,13 +48,13 @@ PassSentinel is an advanced browser-based cybersecurity tool built with pure HTM
 ---
 
 ## 🧩 Folder Structure
-
+```bash
 PassSentinel/
 ├── index.html # Main HTML file
 ├── style.css # All visual styling
 ├── app.js # Application logic
 └── README.md # Project documentation
-
+```
 
 ---
 
