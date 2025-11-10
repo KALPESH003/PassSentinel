@@ -67,3 +67,14 @@ git clone https://github.com/KALPESH003/PassSentinel.git
 ### 02. Open the project
 ### 03. Run the project
 Just open index.html directly in your browser — no setup or dependencies required.
+
+---
+## 👤 Author
+KALPESH K. SUTHAR
+
+If you like Taskly, give it a star ⭐ on GitHub and showcase your support!
+
+---
+
+## Tags
+task-manager, productivity, html-css-js, webapp, ui-design, localstorage, javascript-project, to-do-list, mscit, portfolio
